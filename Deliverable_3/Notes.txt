@@ -1,0 +1,15 @@
+-- General notes file for questions/concerns -- 
+
+Why are some attributes prepended with "_" but others aren't?
+
+What exactly is race.participants? Composite? Multi-valued?
+
+Is jockey.colors multivalued?
+
+I don't think record is a properly identified weak entity.
+
+Same with prize.
+
+Horse and winner have foreign keys but other tables don't.
+
+What about relationships?
