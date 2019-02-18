@@ -1,15 +1,15 @@
 -- General notes file for questions/concerns -- 
 
-Why are some attributes prepended with "_" but others aren't?
+Why are some attributes prepended with "_" but others aren't? A: Good question
 
-What exactly is race.participants? Composite? Multi-valued?
+What exactly is race.participants? Composite? Multi-valued? A: I think this should be multi-valued. Basically it is a list of all the horses (horseID's) that are participating in that particular race.
 
-Is jockey.colors multivalued?
+Is jockey.colors multivalued? A: A jokey can have multiple colors. (ex. blue and yellow) If you scroll to the bottom of the following pages you can see some jockey uniforms. https://en.wikipedia.org/wiki/Triple_Crown_of_Thoroughbred_Racing_(United_States)
 
-I don't think record is a properly identified weak entity.
+I don't think record is a properly identified weak entity. A: Can you provide more info on why you do not think it is a properly identified weak entity?
 
-Same with prize.
+Same with prize. A:Same as above 
 
-Horse and winner have foreign keys but other tables don't.
+Horse and winner have foreign keys but other tables don't. A: Winner has a forgien key (ID's) of the jockey, horse, and owner who won the race. These ID's have to exist in the database prior to them becoming a winner. The horse is owned by the owner so the horse has a forgien key to the owner's ID. (The owner must also be in the database.)
 
-What about relationships?
+What about relationships? A: What about them?
