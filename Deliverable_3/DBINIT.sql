@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS raceday (
     _events VARCHAR(255)
 );
 
--- Participants???
+-- Participants? A: multi-valued, a list of all horseIDs participating in each particular race. 
 CREATE TABLE IF NOT EXISTS race (
     RaceID INT PRIMARY KEY,
     track VARCHAR(255),
@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS track (
     terraintype VARCHAR(255)
 );
 
+-- colors is also a multi-valued attribute
 CREATE TABLE IF NOT EXISTS jockey (
     jockeyID INT PRIMARY KEY,
     _name VARCHAR(255),
