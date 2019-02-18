@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS _owner (
 
 CREATE TABLE IF NOT EXISTS trainer (
     trainerID INT PRIMARY KEY,
-    name VARCHAR(255),
+    _name VARCHAR(255),
     _rank INT,
     earnings INT
 
