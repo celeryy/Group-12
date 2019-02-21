@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project name="Ser322 Group-12 Deliverable 4, JDBC Connectivity and TripleCrown"
+	 default="targets" basedir="."
+	 xmlns:dn="antlib:org.apache.ant.dotnet"
+	 xmlns="antlib:org.apache.tools.ant">
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+  <!-- properties for execution arguments -->
+  <property name="user" value="root"/>
+  <property name="pass" value="root"/>
+  <property name="method" value="query1"/>
+  <property name="driver" value="com.mysql.jdbc.Driver"/>
+  <property name="path" value="jdbc:mysql://localhost/TripleCrown?autoReconnect=true&amp;&amp;useSSL=false&amp;&amp;allowPublicKeyRetrieval=true &amp;&amp;useLegacyDatetimeCode=false&amp;&amp;serverTimezone=America/New_York"/>
+  
+
+  <!-- properties for compilation -->
+  <property name="src.dir" value="src/java"/>
+  <property name="classes" value="classes/"/>
+
+  <!-- compile.classpath -->
+  <path id="compile.classpath">
+    <pathelement location="${classes}"/>
+    <fileset dir="${basedir}/lib">
+      <include name="mysql-connector-java-8.0.15.jar"/>
+    </fileset>
+  </path>
+
+  <!-- targets -->
+  <target name="targets">
+    <echo message="Ant targets are: targets, clean, prepare, build, execute"/>
+    <echo message="Execute with 'ant execute' -Duser=&lt;yourUserName&gt; -Dpass=&lt;yourPass&gt; -Dmethod=&lt;methodName&gt;"/>
+    <echo message="Default login info: user=${user}, pass=${pass}"/>
+    <echo message="Default method: ${method}"/>
+  </target>
+
+  <!-- prepare -->
+  <target name="prepare">
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <!-- clean -->
+  <target name="clean">
+    <delete dir="${classes}" failonerror="false"/>
+  </target>
+
+  <!-- build -->
+  <target name="build" depends="prepare">
+    <echo message="Compiling application..."/>
+    <javac srcdir="${src.dir}" includeantruntime="false" destdir="${classes}">
+      <classpath refid="compile.classpath"/>
+    </javac>
+    <echo message="Compilation complete."/>
+  </target>
+
+  <!-- execute -->
+  <target name="execute" depends="build">
+    <echo message="Executing application.."/>
+    <java classname="ser322.TripleCrownDatabase" fork="yes">
+      <classpath refid="compile.classpath"/>
+      <arg value="${path}"/>
+      <arg value="${user}"/>
+      <arg value="${pass}"/>
+      <arg value="${driver}"/>
+      <arg value="${method}"/>
+    </java>
+  </target>
+</project>
