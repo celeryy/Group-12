@@ -2,7 +2,7 @@
 -- use TripleCrown
 
 CREATE TABLE IF NOT EXISTS raceday (
-    _name VARCHAR(255) PRIMARY KEY,
+    _name VARCHAR(60) PRIMARY KEY,
     _date DATE,
     track VARCHAR(255),
     _events VARCHAR(255)
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS race (
 );
 
 CREATE TABLE IF NOT EXISTS track (
-    _name VARCHAR(255) PRIMARY KEY,
+    _name VARCHAR(60) PRIMARY KEY,
     location VARCHAR(255),
     length INT,
     terraintype VARCHAR(255)
