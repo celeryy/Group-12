@@ -27,7 +27,7 @@
 
   <!-- targets -->
   <target name="targets">
-    <echo message="Ant targets are: targets, clean, prepare, build, execute"/>
+    <echo message="Ant targets are: targets, clean, prepare, build, build.gui, execute, execute.gui"/>
     <echo message="Execute with 'ant execute' -Duser=&lt;yourUserName&gt; -Dpass=&lt;yourPass&gt; -Dmethod=&lt;methodName&gt;"/>
     <echo message="Default login info: user=${user}, pass=${pass}"/>
     <echo message="Default method: ${method}"/>
@@ -52,6 +52,18 @@
     <echo message="Compilation complete."/>
   </target>
 
+  <!-- build.gui -->
+  <target name="build.gui" depends="prepare">
+    <echo message="Compiling gui..."/>
+    <javac srcdir="${src.dir}" includeantruntime="false" destdir="${classes}">
+      <classpath refid="compile.classpath"/>
+    </javac>
+    <echo message="Done compiling gui"/>
+  </target>
+
+  <!-- build.all -->
+  <target name="build.add" depends="build, build.gui"/>
+
   <!-- execute -->
   <target name="execute" depends="build">
     <echo message="Executing application.."/>
@@ -62,6 +74,14 @@
       <arg value="${pass}"/>
       <arg value="${driver}"/>
       <arg value="${method}"/>
+    </java>
+  </target>
+
+  <!-- execute.gui -->
+  <target name="execute.gui" depends="build">
+    <echo message="Executing gui.."/>
+    <java classname="ser322.DBGUI" fork="yes">
+      <classpath refid="compile.classpath"/>
     </java>
   </target>
 </project>
