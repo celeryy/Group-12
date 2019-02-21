@@ -13,3 +13,5 @@ Files in Deliverable_3 include:
 - DBSAMPLE.sql: Contains sample queries to test the database.
 - Notes.txt: Contains general questions/concerns about project status.
 - group12-d3.docx: The initial document with RDBM and sql statements/queries.
+
+See readme.rtf in Deliverable_4 for more information about that specific folder.
