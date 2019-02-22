@@ -6,10 +6,8 @@
   <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
   <!-- properties for execution arguments -->
-  <property name="method" value="query1"/>
-  <property name="driver" value="com.mysql.jdbc.Driver"/>
-  <property name="path" value="jdbc:mysql://localhost/TripleCrown?autoReconnect=true&amp;&amp;useSSL=false&amp;&amp;allowPublicKeyRetrieval=true &amp;&amp;useLegacyDatetimeCode=false&amp;&amp;serverTimezone=America/New_York"/>
-  
+  <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+  <property name="path" value="jdbc:mysql://localhost:3306/TripleCrown"/>  
 
   <!-- properties for compilation -->
   <property name="src.dir" value="src/java"/>
@@ -26,9 +24,7 @@
   <!-- targets -->
   <target name="targets">
     <echo message="Ant targets are: targets, clean, prepare, build, build.gui, execute, execute.gui"/>
-    <echo message="Execute with 'ant execute' -Duser=&lt;yourUserName&gt; -Dpass=&lt;yourPass&gt; -Dmethod=&lt;methodName&gt;"/>
-    <echo message="Default login info: user=${user}, pass=${pass}"/>
-    <echo message="Default method: ${method}"/>
+    <echo message="Execute with 'ant execute'"/>
   </target>
 
   <!-- prepare -->
@@ -60,7 +56,7 @@
   </target>
 
   <!-- build.all -->
-  <target name="build.add" depends="build, build.gui"/>
+  <target name="build.all" depends="build, build.gui"/>
 
   <!-- execute -->
   <target name="execute" depends="build">
@@ -69,7 +65,6 @@
       <classpath refid="compile.classpath"/>
       <arg value="${path}"/>
       <arg value="${driver}"/>
-      <arg value="${method}"/>
     </java>
   </target>
 
