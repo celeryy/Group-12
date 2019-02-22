@@ -1,5 +1,6 @@
 package ser322;
 
+import java.io.Console;
 import java.io.File;
 import java.io.StringWriter;
 
@@ -10,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -31,27 +34,36 @@ public class TripleCrownDatabase {
        PreparedStatement pStmnt=null;
        ResultSet rs = null;
    
-       if (args.length < 5) {
+       if (args.length < 3) {
 	   System.out.print("USAGE: java ser322.TripleCrownDatabase");
-	   System.out.println(" <url> <user> <pass> <driver> <method>");
+	   System.out.println("<url> <driver>");
 	   System.exit(0);
        }
-       
+
+       // Database information
        String url = args[0];
-       String user = args[1];
-       String pass = args[2];
-       String driver = args[3];
-       String method = args[4];
+       String driver = args[1];
+       String method = args[2];
             
-       try{      
+       try{	   
+	   // Get login info
+	   Console cons = System.console();       
+	   System.out.print("Please enter your login username: ");
+	   String user = cons.readLine();
+	   char[] passArr = cons.readPassword("Enter your password: ");
+	   String pass = new String(passArr);
+	   System.out.println();
+
+	   // Connect to database
 	   Class.forName(driver);
-      
 	   System.out.println("Connecting to database...");
 	   connect = DriverManager.getConnection(url, user, pass);
-      
+
+	   // Create a blank statement
 	   System.out.println("Creating statement...");
 	   stmnt = connect.createStatement();      
-	   
+
+	   // Execute queries
 	   if(method.equals("query1")){
 	       String query1;
 	       query1 = "SELECT cashvaluegiven FROM prize WHERE cashvaluegiven >= 5000";

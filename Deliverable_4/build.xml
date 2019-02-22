@@ -6,8 +6,6 @@
   <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
   <!-- properties for execution arguments -->
-  <property name="user" value="root"/>
-  <property name="pass" value="root"/>
   <property name="method" value="query1"/>
   <property name="driver" value="com.mysql.jdbc.Driver"/>
   <property name="path" value="jdbc:mysql://localhost/TripleCrown?autoReconnect=true&amp;&amp;useSSL=false&amp;&amp;allowPublicKeyRetrieval=true &amp;&amp;useLegacyDatetimeCode=false&amp;&amp;serverTimezone=America/New_York"/>
@@ -70,8 +68,6 @@
     <java classname="ser322.TripleCrownDatabase" fork="yes">
       <classpath refid="compile.classpath"/>
       <arg value="${path}"/>
-      <arg value="${user}"/>
-      <arg value="${pass}"/>
       <arg value="${driver}"/>
       <arg value="${method}"/>
     </java>
