@@ -20,8 +20,4 @@ java -cp lib/mysql-connector-java-8.0.15.jar:classes ser322.TripleCrownDatabase 
 
 If you have ant installed on your system:
    - Use "ant targets" to get a list of targets
-   - Default execution of the application connects to the database using
-     user: root, pass: root and executes query1
    - Use "ant execute"
-     if you want to run a different method, or your login credentials are not
-     root, root
