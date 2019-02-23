@@ -104,9 +104,9 @@ public class tcEdited
 
 				rs = stmnt.executeQuery(sql);
 
-				System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s", "RaceID", "Track", 
-						"Distance", "Prizewon", "Gates", "Participants");
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s", "RaceID", "Track", 
+						"Distance", "Prizewon", "Gates", "Participants\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -116,8 +116,8 @@ public class tcEdited
 
 					System.out.println();
 				}
-
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+        
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
 			//Option 2: Select horse info
@@ -126,10 +126,10 @@ public class tcEdited
 				String sql = "SELECT * FROM horse";
 
 				rs = stmnt.executeQuery(sql);
-
-				System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s, %50s, %20s, %50s", "horseID", "_name", 
-						"height", "weight", "_value", "age", "breed", "ownerID", "jockeyID", "trainerID");
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+        
+				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s, %20s, %20s, %10s, %20s", "horseID", "_name", 
+						"height", "weight", "_value", "age", "breed", "ownerID", "jockeyID", "trainerID\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -140,8 +140,8 @@ public class tcEdited
 
 					System.out.println();
 				}
-
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+        
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
 			//Option 3: Select jockey info
@@ -150,10 +150,10 @@ public class tcEdited
 				String sql = "SELECT * FROM jockey";
 
 				rs = stmnt.executeQuery(sql);
-
-				System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s", "jockeyID", "_name", 
-						"colors", "height", "weight", "_rank", "earnings");
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+        
+				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s, %20s", "jockeyID", "_name", 
+						"colors", "height", "weight", "_rank", "earnings\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -165,9 +165,10 @@ public class tcEdited
 					System.out.println();
 				}
 
-				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
+			
 			//Option 4:
 			if(choice == 4){}
 			//Option 5: 
@@ -177,7 +178,7 @@ public class tcEdited
 			//Option 7:
 			if(choice == 7){}
 			//Option 8:
-			if(choice == 8) {}
+			if(choice == 8){}
 			//Option 9: 
 			if(choice == 9)
 			{
@@ -204,49 +205,6 @@ public class tcEdited
 				for(int i = 0; i < 220; i++) { System.out.print("-"); }
 				System.out.println();
 			}
-			
-			/*
-			// Execute queries
-			if(choice == 1){
-			String query1;
-			query1 = "SELECT cashvaluegiven FROM prize WHERE cashvaluegiven >= 5000";
-			rs = stmnt.executeQuery(query1);
-
-			while(rs.next()){         
-			   int cash = rs.getInt("cashvaluegiven");       
-			   System.out.println("cash value given: " + cash);
-			}
-			} else if (method.equals("query2")){	       
-			pStmnt=connect.prepareStatement("SELECT _name FROM trainer WHERE trainerID=?");
-			System.out.print("Enter a trainerID: ");
-			String trainerId = cons.readLine();
-			System.out.println();
-			pStmnt.setString(1, trainerId);
-			rs = pStmnt.executeQuery();
-
-			while(rs.next()){
-			   String name=rs.getString("_name");
-			   System.out.println("NAME: " + name);
-			}
-			} else if (method.equals("insert")){
-			pStmnt=connect.prepareStatement("INSERT INTO record VALUES (?,?,?)");
-			System.out.print("Enter totalRaces: ");
-			String totRaces = cons.readLine();
-			pStmnt.setString(1,totRaces);
-			System.out.println();
-			System.out.print("Enter racesWon: ");
-			String racesWon = cons.readLine();   
-			pStmnt.setString(2,racesWon);
-			System.out.println();
-			System.out.print("Enter win percent(without percent sign): ");
-			String winPerc = cons.readLine();
-			pStmnt.setString(3, winPerc);
-			System.out.println();
-			pStmnt.executeUpdate();
-
-			System.out.println("success");
-			}
-			*/
 		
 		} catch(Exception e) {
 			System.out.println("Exception executing statement on database");
