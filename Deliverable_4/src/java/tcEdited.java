@@ -19,14 +19,15 @@ public class tcEdited
 
 	private static String user;
 	private static String[] menu = {
-	    "1. View race info\n",
-	    "2. View horse info\n",
-	    "3. View jockey info\n",
-	    "4. Add a new horse\n",
-	    "5. Add a new jockey\n",
-	    "6. Remove a horse\n",
-	    "7. Remove a jockey\n"};
-
+	    "1. Select race info\n", //kyle
+	    "2. Select horse info\n", //sierra
+	    "3. Select jockey info\n", //sierra
+	    "4. Add a new horse\n", //abigail
+	    "5. Add a new jockey\n", //abigail
+	    "6. Delete a horse\n", //adam
+	    "7. Delete a jockey\n", //adam
+	    "8. Join Horse and Jockey\n", //kyle
+	    "9. Join Horse and Winner\n"}; //sierra
 	/**
 	* Display a menu to the user
 	*/
@@ -42,7 +43,7 @@ public class tcEdited
 		}
 
 		System.out.println("\n---------------------------\n");
-		System.out.print("Please enter a selection(1-7): ");
+		System.out.print("Please enter a selection(1-9): ");
 	}
 
 	public static void main(String[] args) {
@@ -96,6 +97,7 @@ public class tcEdited
 			System.out.println("You entered: " + menu[(choice-1)]);
 
 			//View race info query
+			//Option 1: Select race info
 			if(choice == 1)	
 			{
 				String sql = "SELECT * FROM race";
@@ -118,6 +120,7 @@ public class tcEdited
 				for(int i = 0; i < 220; i++) { System.out.print("-"); }
 				System.out.println();
 			}
+			//Option 2: Select horse info
 			if(choice==2)
 			{
 				String sql = "SELECT * FROM horse";
@@ -141,6 +144,7 @@ public class tcEdited
 				for(int i = 0; i < 220; i++) { System.out.print("-"); }
 				System.out.println();
 			}
+			//Option 3: Select jockey info
 			if(choice == 3)	
 			{
 				String sql = "SELECT * FROM jockey";
@@ -164,6 +168,18 @@ public class tcEdited
 				for(int i = 0; i < 220; i++) { System.out.print("-"); }
 				System.out.println();
 			}
+			//Option 4:
+			if(choice == 4){}
+			//Option 5: 
+			if(choice == 5){}
+			//Option 6:
+			if(choice == 6){}
+			//Option 7:
+			if(choice == 7){}
+			//Option 8:
+			if(choice == 8) {}
+			//Option 9: 
+			if(choice == 9){}
 			
 			/*
 			// Execute queries
