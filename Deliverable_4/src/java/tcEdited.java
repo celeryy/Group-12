@@ -118,6 +118,52 @@ public class tcEdited
 				for(int i = 0; i < 220; i++) { System.out.print("-"); }
 				System.out.println();
 			}
+			if(choice==2)
+			{
+				String sql = "SELECT * FROM horse";
+
+				rs = stmnt.executeQuery(sql);
+
+				System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s, %50s, %20s, %50s", "horseID", "_name", 
+						"height", "weight", "_value", "age", "breed", "ownerID", "jockeyID", "trainerID");
+				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				System.out.println();
+
+				while(rs.next())
+				{
+					System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s, %50s, %20s, %50s", rs.getString(1), rs.getString(2), 
+							rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),  rs.getString(7),  
+							  rs.getString(8),  rs.getString(9),  rs.getString(10) );
+
+					System.out.println();
+				}
+
+				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				System.out.println();
+			}
+			if(choice == 3)	
+			{
+				String sql = "SELECT * FROM jockey";
+
+				rs = stmnt.executeQuery(sql);
+
+				System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s", "jockeyID", "_name", 
+						"colors", "height", "weight", "_rank", "earnings");
+				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				System.out.println();
+
+				while(rs.next())
+				{
+					System.out.printf("%20s, %50s, %30s, %50s, %20s, %50s, %30s", rs.getString(1), rs.getString(2), 
+							rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+							 rs.getString(7));
+
+					System.out.println();
+				}
+
+				for(int i = 0; i < 220; i++) { System.out.print("-"); }
+				System.out.println();
+			}
 			
 			/*
 			// Execute queries
