@@ -105,8 +105,8 @@ public class tcEdited
 				rs = stmnt.executeQuery(sql);
 
 				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s", "RaceID", "Track", 
-						"Distance", "Prizewon", "Gates", "Participants");
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+						"Distance", "Prizewon", "Gates", "Participants\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -117,7 +117,7 @@ public class tcEdited
 					System.out.println();
 				}
 
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
 			//Option 2: Select horse info
@@ -128,8 +128,8 @@ public class tcEdited
 				rs = stmnt.executeQuery(sql);
 
 				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s, %20s, %20s, %10s, %20s", "horseID", "_name", 
-						"height", "weight", "_value", "age", "breed", "ownerID", "jockeyID", "trainerID");
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+						"height", "weight", "_value", "age", "breed", "ownerID", "jockeyID", "trainerID\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -141,7 +141,7 @@ public class tcEdited
 					System.out.println();
 				}
 
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
 			//Option 3: Select jockey info
@@ -152,8 +152,8 @@ public class tcEdited
 				rs = stmnt.executeQuery(sql);
 
 				System.out.printf("%10s, %20s, %20s, %20s, %10s, %20s, %20s", "jockeyID", "_name", 
-						"colors", "height", "weight", "_rank", "earnings");
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+						"colors", "height", "weight", "_rank", "earnings\n");
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 
 				while(rs.next())
@@ -165,7 +165,7 @@ public class tcEdited
 					System.out.println();
 				}
 
-				for(int i = 0; i < 210; i++) { System.out.print("-"); }
+				for(int i = 0; i < 150; i++) { System.out.print("-"); }
 				System.out.println();
 			}
 			//Option 4:
