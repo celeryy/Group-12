@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 import java.util.Scanner;
 
-public class TripleCrownDatabase 
+public class tcEdited 
 {
 
 	private static String user;
